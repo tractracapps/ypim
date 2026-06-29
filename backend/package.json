@@ -1,0 +1,24 @@
+{
+  "name": "ypim-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "db:create": "node scripts/create-database.js",
+    "migrate": "node --import dotenv/config node_modules/node-pg-migrate/bin/node-pg-migrate.js up",
+    "migrate:down": "node --import dotenv/config node_modules/node-pg-migrate/bin/node-pg-migrate.js down",
+    "migrate:create": "node --import dotenv/config node_modules/node-pg-migrate/bin/node-pg-migrate.js create",
+    "setup": "npm run db:create && npm run migrate",
+    "dev": "node src/index.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "node-pg-migrate": "^8.0.4"
+  }
+}
