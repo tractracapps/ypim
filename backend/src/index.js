@@ -4,6 +4,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import applicationsRouter from './routes/applications.js';
+import submitApplyRouter from './routes/submit-apply.js';
 
 dotenv.config();
 
@@ -17,7 +18,12 @@ app.use(cors());
 app.use(express.json({ limit: '100kb' }));
 app.use(express.static(staticRoot));
 
+app.get('/apply', (_req, res) => {
+  res.redirect(301, '/Apply.html');
+});
+
 app.use('/api/applications', applicationsRouter);
+app.use('/api/submit-apply', submitApplyRouter);
 
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true });
