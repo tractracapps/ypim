@@ -1,5 +1,13 @@
 {
+  "engines": {
+    "node": "20.x"
+  },
   "rewrites": [
     { "source": "/apply", "destination": "/Apply.html" }
-  ]
+  ],
+  "functions": {
+    "api/*.js": {
+      "runtime": "nodejs20.x"
+    }
+  }
 }
