@@ -3,7 +3,8 @@
     "node": "20.x"
   },
   "rewrites": [
-    { "source": "/apply", "destination": "/Apply.html" }
+    { "source": "/apply", "destination": "/Apply.html" },
+    { "source": "/admin", "destination": "/admin.html" }
   ],
   "functions": {
     "api/*.js": {
