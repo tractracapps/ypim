@@ -1,6 +1,6 @@
 const BREVO_ENDPOINT = 'https://api.brevo.com/v3/smtp/email';
 const TO_EMAIL = 'faith.amanata@tractrac.co';
-const FROM_EMAIL = 'info@ypim.africa';
+const FROM_EMAIL = 'tractracnigeria@gmail.com';
 
 function esc(s) {
   return String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
