@@ -25,6 +25,21 @@ module.exports = async function handler(req, res) {
   }
 
   try {
+    await sql`
+      CREATE TABLE IF NOT EXISTS applications (
+        id SERIAL PRIMARY KEY,
+        full_name TEXT,
+        email TEXT,
+        phone TEXT,
+        age_range TEXT,
+        gender TEXT,
+        state TEXT,
+        interests TEXT[],
+        leadership TEXT,
+        declaration BOOLEAN,
+        created_at TIMESTAMPTZ DEFAULT now()
+      )
+    `;
     const { rows } = await sql`
       SELECT id, full_name, email, phone, age_range, gender, state, interests, leadership, declaration, created_at
       FROM applications
